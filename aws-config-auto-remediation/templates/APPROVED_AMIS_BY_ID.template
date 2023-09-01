@@ -135,7 +135,7 @@
       "Description": "Specify AMI IDs (comma separated list of up to 10).",
       "MinLength": "1",
       "ConstraintDescription": "This parameter is required.",
-      "Default": "ami-0bbd288547638e98f"
+      "Default": "ami-050e8a1e3661ac6b9"
     }
   },
   "Metadata": {
