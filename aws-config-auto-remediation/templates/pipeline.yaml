@@ -1,0 +1,35 @@
+# step 1 Node allocation
+
+node('dev') 
+{
+stage('continuous Download') 
+  {
+    git 'https://github.com/mbahsamuel/maven.git'
+  }
+stage('continuous build') 
+  {
+    sh 'mvn package'
+  }
+stage('continuous depoy') 
+  {
+    sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war   ubuntu@172.31.41.246:/var/lib/tomcat9/webapps/qaenv.war'
+  }
+  stage('continuous delivery') 
+  {
+    sh 'scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war   ubuntu@172.31.47.117:/var/lib/tomcat9/webapps/prodenv.war'
+  }
+}
+
+/var/lib/jenkins
+
+
+
+
+
+
+
+
+
+/var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war
+
+scp /var/lib/jenkins/workspace/scriptedpipeline/webapp/target/webapp.war   ubuntu@172.31.41.246:/var/lib/tomcat9/webapps/qaenv.war
