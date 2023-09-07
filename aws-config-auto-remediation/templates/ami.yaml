@@ -1,0 +1,96 @@
+Create a Golden AMI. THERE ARE TWO OPTIONS, YOU CAN CHOOSE TO BOOTSTRAP YOUR COMMANDS OR INSTALL MANUALLY WHICH EVERY WORK. WHEN YOU LAUNCH THE INSTANCE MAKE SURE TO CONFIRM YOUR INSTALLATION BY  Access the web server by using public_ip
+
+you can launch it manually and install all the packages with the commands below OR you can Bootstrap. the two options are below
+
+
+
+OPTION-1
+
+INSTANCE 1
+
+Step 1: Create Linux Machine
+Launch instance ---  Amazon Linux -- Name Tag- Desamist-1 --- Security Group =all traffic
+Description - LinSG
+Add Rule
+HTTP
+
+Launch 
+
+---------- 
+
+
+Step 4: Run the commands to install web package
+sudo su
+yum update -y
+yum install httpd -y
+cd    /var/www/html
+echo "desamist-1" > index.html
+ls
+service httpd start
+chkconfig httpd on
+
+
+ Access the web server by using public_ip
+
++++++++++++++++++++++++++++++++++++++++++
+
+
+INSTANCE 2
+
+Launch instance ---  Amazon Linux--- Name Tag- Desamist-2 --- Security Group =all traffic
+
+Run the commands to install web package
+
+sudo su
+yum update -y
+yum install httpd -y
+cd    /var/www/html
+echo "desamist-2" > index.html
+ls
+service httpd start
+chkconfig httpd on
+
+
+
+Step 5: Access the web server by using public_ip
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+OPTION 2
+
+You can bootstrap your script for a quick lunch; these are the scripts for the two ec2 to be created.
+
+INSTANCE 1
+
+Launch instance ---  Amazon Linux--- Name Tag- Desamist-2 --- Security Group =all traffic--Down to advance options and copy the below command and paste in bootstrapp
+
+
+#!/bin/bash
+sudo su
+yum update -y
+yum install httpd -y
+cd /var/www/html
+echo "desamist-1" > index.html
+service httpd start
+chkconfig httpd on
+
+++++++++++++++++++++++++++
+
+INSTANCE 2
+
+Launch instance ---  Amazon Linux--- Name Tag- Desamist-2 --- Security Group =all traffic--Down to advance options and copy the below command and paste in bootstrapp
+
+
+#!/bin/bash
+sudo su
+yum update -y
+yum install httpd -y
+cd /var/www/html
+echo "desamist-2" > index.html
+service httpd start
+chkconfig httpd on
+
++++++++++++++++++++++++++++++++++
+
+
+
+

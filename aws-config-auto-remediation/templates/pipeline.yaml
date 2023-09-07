@@ -1,6 +1,6 @@
 # step 1 Node allocation
 
-node('dev') 
+node('built-in') 
 {
 stage('continuous Download') 
   {
@@ -34,7 +34,7 @@ stage('continuous depoy')
 # to generate these you have to get in as a jenkins user    "sudo su - jenkins" 
 # then generate a key with the below command
 # here you do "ssh-keygen -t rsa"
-#once keys generated here you can copy those keys now to the qa or prod in ~/.sss/. while here do ls
+#once keys generated here you can copy those keys now to the qa or prod in ~/.ssh/. while here do ls
 # to copy the key cd ~/.ssh/ and do ls 
 # in the .ssh/ cat the "id_rsa.pb ""
 # you will see authorized_keys the vi authorized_keys and paste the keys you generated in the dev sever
