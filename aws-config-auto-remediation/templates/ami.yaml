@@ -57,7 +57,7 @@ Step 5: Access the web server by using public_ip
 
 OPTION 2
 
-You can bootstrap your script for a quick lunch; these are the scripts for the two ec2 to be created.
+You can bootstrap your script for a quick lunch, using a userdata; these are the scripts for the two ec2 to be created.
 
 INSTANCE 1
 
